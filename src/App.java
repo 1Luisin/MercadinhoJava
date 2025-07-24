@@ -32,10 +32,34 @@ public class App {
                 System.out.println("\n ----Lista de Produtos----");
                 for (Produto p : produtos) {
                     p.exibirDetalhes();
-                    break;
+                    System.out.println("---------------------")
                 }
-        
-            case 3
+                 break;
+            
+                 case 3: 
+                    System.out.print("Digite o nome do produto a buscar: ");
+                    String busca = leitura.nextLine();
+                    boolean encontrado = false;
+                    for (Produto p : produtos) {
+                        if (p.nome.equalsIgnoreCase(busca)) {
+                            p.exibirDetalhes();
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("Produto não encontrado.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Encerrando o sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
         }
         
 
