@@ -8,7 +8,13 @@ public class Produto {
         this.preco = preco;
         this.quantidade = quantidade;
         
+        
+    }
 
+    public void exibirDetalhes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Preço: R$" + preco);
+        System.out.println("Quantidade: " + quantidade);
     }
 
 }
