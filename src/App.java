@@ -4,14 +4,17 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner leitura = new Scanner(System.in);
-
+        
+        int OpcaoUsuario = leitura.nextInt(); 
+        
+        do {
         ArrayList<Produto> produtos = new ArrayList<>();         
         System.out.println("\n ---MENU---");
         System.out.println("\n1 - Cadastrar produtos");
         System.out.println("\n2 - Listar produtos.");
         System.out.println("\n3 - Buscar por um produto.");
         System.out.println("\n4 - Encerrar programa.");
-        int OpcaoUsuario = leitura.nextInt();  
+         
         
         switch (OpcaoUsuario){
             case 1:
@@ -32,12 +35,13 @@ public class App {
                 System.out.println("\n ----Lista de Produtos----");
                 for (Produto p : produtos) {
                     p.exibirDetalhes();
-                    System.out.println("---------------------")
+                    System.out.println("-----------------");
                 }
                  break;
+                
+                 case 3:   
             
-                 case 3: 
-                    System.out.print("Digite o nome do produto a buscar: ");
+            System.out.print("Digite o nome do produto a buscar: ");
                     String busca = leitura.nextLine();
                     boolean encontrado = false;
                     for (Produto p : produtos) {
@@ -58,10 +62,8 @@ public class App {
 
                 default:
                     System.out.println("Opção inválida!");
-            }
-
         }
         
-
+       } while (OpcaoUsuario != 4);
     }
 }
